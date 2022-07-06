@@ -139,4 +139,4 @@ The content of the daily meeting is generally as follows:
    PostgreSQL
    • You can find detail information via this link:
    https://towardsdatascience.com/how-to-deploy-a-postgresdatabase-
-   for-free-95cf1d8387bf
+   for-free-95cf1d8387bf...
