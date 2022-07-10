@@ -1,7 +1,7 @@
 
-from PyQt5 import QtWidgets,uic
+from PyQt5 import uic, QtWidgets
+from PyQt5.QtWidgets import QMainWindow
 from mainWindow import MainWindow
-from PyQt5 import QtWidgets
 import sys   
 
                   

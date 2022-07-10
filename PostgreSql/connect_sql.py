@@ -16,6 +16,7 @@ creat_script = '''CREATE TABLE IF NOT EXISTS autos (
 	"year" varchar(255),
 	"price" varchar(255),
 	"plate" varchar(255),
+	"image" varchar(255),
 	CONSTRAINT "main_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
