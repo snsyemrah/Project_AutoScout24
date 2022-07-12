@@ -19,10 +19,14 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         uic.loadUi('Ui/autoscreen.ui', self)
+        
+        self.table_autos.setColumnWidth(0,350)
+        self.table_autos.setColumnWidth(1,100)
+        self.table_autos.setColumnWidth(2,100)
         self.start.clicked.connect(self.Start)
         self.PlateSearch.clicked.connect(self.search_plate)
         self.quit.clicked.connect(self.Quit)
-        self.table_autos.setColumnWidth(0,370)
+        
         self.table_autos.clicked.connect(self.Clicked)
         
         self.show()
