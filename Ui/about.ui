@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #003f5c;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>390</y>
+      <width>151</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{border-radius:10px;
+	font: 10pt &quot;.AppleSystemUIFont&quot;;
+border-width:3px;
+border-style: solid;
+background-color: rgb(255, 255, 255);
+border-color: #ffa600;
+
+
+
+
+}
+QPushButton:hover{background-color: #bc5090;}</string>
+    </property>
+    <property name="text">
+     <string>Ali Osman Ozpinar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>390</y>
+      <width>151</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{border-radius:10px;
+	font: 10pt &quot;.AppleSystemUIFont&quot;;
+border-width:3px;
+border-style: solid;
+background-color: rgb(255, 255, 255);
+border-color: #ffa600;
+
+
+
+
+}
+QPushButton:hover{background-color: #bc5090;}</string>
+    </property>
+    <property name="text">
+     <string>Serkan Semih</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>390</y>
+      <width>151</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{border-radius:10px;
+	font: 10pt &quot;.AppleSystemUIFont&quot;;
+border-width:3px;
+border-style: solid;
+background-color: rgb(255, 255, 255);
+border-color: #ffa600;
+
+
+
+
+}
+QPushButton:hover{background-color: #bc5090;}</string>
+    </property>
+    <property name="text">
+     <string>Emrah Sensoy</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>390</y>
+      <width>151</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{border-radius:10px;
+	font: 10pt &quot;.AppleSystemUIFont&quot;;
+border-width:3px;
+border-style: solid;
+background-color: rgb(255, 255, 255);
+border-color: #ffa600;
+
+
+
+
+}
+QPushButton:hover{background-color: #bc5090;}</string>
+    </property>
+    <property name="text">
+     <string>Burhan Satar</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>120</y>
+      <width>381</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color:white;</string>
+    </property>
+    <property name="text">
+     <string>Members of Group Elegant</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

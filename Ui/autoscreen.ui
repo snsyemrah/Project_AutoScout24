@@ -6,12 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1345</width>
-    <height>830</height>
+    <width>1659</width>
+    <height>862</height>
    </rect>
+  </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::RightToLeft</enum>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: #003f5c;
@@ -24,7 +30,7 @@
      <rect>
       <x>40</x>
       <y>140</y>
-      <width>541</width>
+      <width>691</width>
       <height>771</height>
      </rect>
     </property>
@@ -33,6 +39,9 @@
       <family>Arial</family>
       <pointsize>8</pointsize>
      </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -62,7 +71,7 @@
    <widget class="QLineEdit" name="plate">
     <property name="geometry">
      <rect>
-      <x>469</x>
+      <x>659</x>
       <y>40</y>
       <width>401</width>
       <height>50</height>
@@ -72,9 +81,13 @@
      <font>
       <family>.AppleSystemUIFont</family>
       <pointsize>14</pointsize>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
     </property>
     <property name="styleSheet">
      <string notr="true">border-radius:10px;
@@ -87,16 +100,31 @@ border-color: #ffa600;
 
 </string>
     </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="dragEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="cursorMoveStyle">
+     <enum>Qt::VisualMoveStyle</enum>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="PlateSearch">
     <property name="geometry">
      <rect>
-      <x>870</x>
+      <x>1060</x>
       <y>40</y>
-      <width>131</width>
+      <width>221</width>
       <height>50</height>
      </rect>
     </property>
@@ -104,6 +132,7 @@ border-color: #ffa600;
      <font>
       <family>.AppleSystemUIFont</family>
       <pointsize>14</pointsize>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -135,7 +164,7 @@ QPushButton:hover{background-color: #bc5090;}
      <rect>
       <x>60</x>
       <y>40</y>
-      <width>71</width>
+      <width>91</width>
       <height>50</height>
      </rect>
     </property>
@@ -143,6 +172,7 @@ QPushButton:hover{background-color: #bc5090;}
      <font>
       <family>.AppleSystemUIFont</family>
       <pointsize>14</pointsize>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -172,7 +202,7 @@ QPushButton:hover{background-color: #bc5090;}
    <widget class="QLineEdit" name="total">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>280</x>
       <y>40</y>
       <width>181</width>
       <height>50</height>
@@ -182,6 +212,7 @@ QPushButton:hover{background-color: #bc5090;}
      <font>
       <family>.AppleSystemUIFont</family>
       <pointsize>14</pointsize>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -207,7 +238,7 @@ border-color: #ffa600;
    <widget class="QPushButton" name="quit">
     <property name="geometry">
      <rect>
-      <x>1170</x>
+      <x>1480</x>
       <y>40</y>
       <width>141</width>
       <height>50</height>
@@ -217,6 +248,7 @@ border-color: #ffa600;
      <font>
       <family>.AppleSystemUIFont</family>
       <pointsize>14</pointsize>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -246,7 +278,7 @@ QPushButton:hover{background-color: #bc5090;}
    <widget class="QLineEdit" name="Year_info">
     <property name="geometry">
      <rect>
-      <x>740</x>
+      <x>1050</x>
       <y>220</y>
       <width>201</width>
       <height>25</height>
@@ -256,6 +288,7 @@ QPushButton:hover{background-color: #bc5090;}
      <font>
       <family>.AppleSystemUIFont</family>
       <pointsize>14</pointsize>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -274,7 +307,7 @@ border-style: solid;
    <widget class="QLineEdit" name="City_info">
     <property name="geometry">
      <rect>
-      <x>1080</x>
+      <x>1390</x>
       <y>220</y>
       <width>231</width>
       <height>25</height>
@@ -284,6 +317,7 @@ border-style: solid;
      <font>
       <family>.AppleSystemUIFont</family>
       <pointsize>14</pointsize>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -302,7 +336,7 @@ border-style: solid;
    <widget class="QLineEdit" name="model_info">
     <property name="geometry">
      <rect>
-      <x>740</x>
+      <x>1050</x>
       <y>140</y>
       <width>571</width>
       <height>25</height>
@@ -312,6 +346,7 @@ border-style: solid;
      <font>
       <family>.AppleSystemUIFont</family>
       <pointsize>14</pointsize>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -330,7 +365,7 @@ border-style: solid;
    <widget class="QLineEdit" name="kilometer_info">
     <property name="geometry">
      <rect>
-      <x>740</x>
+      <x>1050</x>
       <y>180</y>
       <width>201</width>
       <height>25</height>
@@ -340,6 +375,7 @@ border-style: solid;
      <font>
       <family>.AppleSystemUIFont</family>
       <pointsize>14</pointsize>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -358,7 +394,7 @@ border-style: solid;
    <widget class="QLineEdit" name="Price_info">
     <property name="geometry">
      <rect>
-      <x>1080</x>
+      <x>1390</x>
       <y>180</y>
       <width>231</width>
       <height>25</height>
@@ -368,6 +404,7 @@ border-style: solid;
      <font>
       <family>.AppleSystemUIFont</family>
       <pointsize>14</pointsize>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -386,7 +423,7 @@ border-style: solid;
    <widget class="QLabel" name="model">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>940</x>
       <y>140</y>
       <width>91</width>
       <height>25</height>
@@ -396,6 +433,7 @@ border-style: solid;
      <font>
       <family>.AppleSystemUIFont</family>
       <pointsize>14</pointsize>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -423,7 +461,7 @@ border-style: solid;
    <widget class="QLabel" name="kilometer">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>940</x>
       <y>180</y>
       <width>91</width>
       <height>25</height>
@@ -433,6 +471,7 @@ border-style: solid;
      <font>
       <family>.AppleSystemUIFont</family>
       <pointsize>14</pointsize>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -457,7 +496,7 @@ border-style: solid;
    <widget class="QLabel" name="Year">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>940</x>
       <y>220</y>
       <width>91</width>
       <height>25</height>
@@ -467,6 +506,7 @@ border-style: solid;
      <font>
       <family>.AppleSystemUIFont</family>
       <pointsize>14</pointsize>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -491,7 +531,7 @@ border-style: solid;
    <widget class="QLabel" name="Price">
     <property name="geometry">
      <rect>
-      <x>970</x>
+      <x>1280</x>
       <y>180</y>
       <width>91</width>
       <height>25</height>
@@ -501,6 +541,7 @@ border-style: solid;
      <font>
       <family>.AppleSystemUIFont</family>
       <pointsize>14</pointsize>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -528,7 +569,7 @@ border-style: solid;
    <widget class="QLabel" name="City1">
     <property name="geometry">
      <rect>
-      <x>970</x>
+      <x>1280</x>
       <y>220</y>
       <width>91</width>
       <height>25</height>
@@ -538,6 +579,7 @@ border-style: solid;
      <font>
       <family>.AppleSystemUIFont</family>
       <pointsize>14</pointsize>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -562,14 +604,15 @@ border-style: solid;
    <widget class="QLabel" name="image_label">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>280</y>
+      <x>1040</x>
+      <y>290</y>
       <width>521</width>
       <height>311</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 255, 255);
+
 border-radius:50px;
 </string>
     </property>
@@ -577,7 +620,7 @@ border-radius:50px;
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../elegant.jpg</pixmap>
+     <pixmap>../GroupElegant.jpeg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -586,9 +629,9 @@ border-radius:50px;
    <widget class="QLineEdit" name="city">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>640</y>
-      <width>141</width>
+      <x>940</x>
+      <y>680</y>
+      <width>211</width>
       <height>111</height>
      </rect>
     </property>
@@ -596,9 +639,13 @@ border-radius:50px;
      <font>
       <family>.AppleSystemUIFont</family>
       <pointsize>14</pointsize>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
     </property>
     <property name="styleSheet">
      <string notr="true">border-radius:10px;
@@ -619,8 +666,8 @@ border-color: #ffa600;
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>850</x>
-      <y>720</y>
+      <x>1200</x>
+      <y>750</y>
       <width>101</width>
       <height>81</height>
      </rect>
@@ -639,8 +686,8 @@ border-color: rgb(255, 2, 255);</string>
    <widget class="QLabel" name="image_label_2">
     <property name="geometry">
      <rect>
-      <x>850</x>
-      <y>620</y>
+      <x>1200</x>
+      <y>650</y>
       <width>101</width>
       <height>61</height>
      </rect>
@@ -662,8 +709,8 @@ border-color: rgb(255, 2, 255);</string>
    <widget class="QLabel" name="label_12">
     <property name="geometry">
      <rect>
-      <x>850</x>
-      <y>690</y>
+      <x>1200</x>
+      <y>720</y>
       <width>101</width>
       <height>21</height>
      </rect>
@@ -682,8 +729,8 @@ border-color: rgb(255, 2, 255);</string>
    <widget class="QLabel" name="image_label_3">
     <property name="geometry">
      <rect>
-      <x>1110</x>
-      <y>620</y>
+      <x>1460</x>
+      <y>650</y>
       <width>101</width>
       <height>61</height>
      </rect>
@@ -704,8 +751,8 @@ border-color: rgb(255, 2, 255);</string>
    <widget class="QLabel" name="label_11">
     <property name="geometry">
      <rect>
-      <x>1110</x>
-      <y>720</y>
+      <x>1460</x>
+      <y>750</y>
       <width>101</width>
       <height>81</height>
      </rect>
@@ -724,8 +771,8 @@ border-color: rgb(255, 2, 255);</string>
    <widget class="QLabel" name="label_13">
     <property name="geometry">
      <rect>
-      <x>1110</x>
-      <y>690</y>
+      <x>1460</x>
+      <y>720</y>
       <width>101</width>
       <height>21</height>
      </rect>
@@ -744,8 +791,8 @@ border-color: rgb(255, 2, 255);</string>
    <widget class="QLabel" name="image_label_4">
     <property name="geometry">
      <rect>
-      <x>980</x>
-      <y>620</y>
+      <x>1330</x>
+      <y>650</y>
       <width>101</width>
       <height>61</height>
      </rect>
@@ -766,8 +813,8 @@ border-color: rgb(255, 2, 255);</string>
    <widget class="QLabel" name="label_14">
     <property name="geometry">
      <rect>
-      <x>980</x>
-      <y>720</y>
+      <x>1330</x>
+      <y>750</y>
       <width>101</width>
       <height>81</height>
      </rect>
@@ -786,8 +833,8 @@ border-color: rgb(255, 2, 255);</string>
    <widget class="QLabel" name="label_15">
     <property name="geometry">
      <rect>
-      <x>980</x>
-      <y>690</y>
+      <x>1330</x>
+      <y>720</y>
       <width>101</width>
       <height>21</height>
      </rect>
@@ -803,9 +850,38 @@ border-color: rgb(255, 2, 255);</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>1470</x>
+      <y>610</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{border-radius:10px;
+	font: 8pt &quot;.AppleSystemUIFont&quot;;
+border-width:3px;
+border-style: solid;
+background-color: rgb(255, 255, 255);
+border-color: #ffa600;
+
+
+
+
+}
+QPushButton:hover{background-color: #bc5090;}</string>
+    </property>
+    <property name="text">
+     <string>About</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../GroupElegant.qrc"/>
+ </resources>
  <connections/>
 </ui>

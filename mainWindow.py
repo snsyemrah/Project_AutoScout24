@@ -11,7 +11,7 @@ from PyQt5.QtGui import QImage, QPixmap
 import math, json
 import datetime
 from datetime import datetime
-
+import about
 
 
 class MainWindow(QMainWindow):
@@ -20,16 +20,18 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         uic.loadUi('Ui/autoscreen.ui', self)
         
-        self.table_autos.setColumnWidth(0,350)
-        self.table_autos.setColumnWidth(1,100)
-        self.table_autos.setColumnWidth(2,100)
+        self.table_autos.setColumnWidth(0,375)
+        self.table_autos.setColumnWidth(1,125)
+        self.table_autos.setColumnWidth(2,125)
         self.start.clicked.connect(self.Start)
         self.PlateSearch.clicked.connect(self.search_plate)
         self.quit.clicked.connect(self.Quit)
+        self.pushButton.clicked.connect(self.about)
         
         self.table_autos.clicked.connect(self.Clicked)
         
         self.show()
+        self.Amsterdam()
 
 
     def Clicked(self):
@@ -131,23 +133,23 @@ class MainWindow(QMainWindow):
 
         second_day = str(date_list[1])+"\n"+"Max: "+str(temp_max_list[1])+"°C"+"\n"+"Min: "+str(temp_min_list[1])+"°C"
         new_icon_2 = f"https://openweathermap.org/img/wn/{icon_list[1]}@2x.png"
-        self.label_11.setText(second_day)
+        self.label_14.setText(second_day)
         image = QImage()
         image.loadFromData(requests.get(new_icon_2).content)
-        self.image_label_3.setPixmap(QPixmap(image))
-        self.image_label_3.show()
+        self.image_label_4.setPixmap(QPixmap(image))
+        self.image_label_4.show()
         # self.image_label_3.setText(new_icon_2)
-        self.label_13.setText(description_list[1])
+        self.label_15.setText(description_list[1])
 
         third_day = str(date_list[2])+"\n"+"Max: "+str(temp_max_list[2])+"°C"+"\n"+"Min: "+str(temp_min_list[2])+"°C"
         new_icon_3 = f"https://openweathermap.org/img/wn/{icon_list[2]}@2x.png"
-        self.label_14.setText(third_day)
+        self.label_11.setText(third_day)
         image = QImage()
         image.loadFromData(requests.get(new_icon_3).content)
-        self.image_label_4.setPixmap(QPixmap(image))
-        self.image_label_4.show()
+        self.image_label_3.setPixmap(QPixmap(image))
+        self.image_label_3.show()
         # self.image_label_4.setText(new_icon_3)
-        self.label_15.setText(description_list[2])
+        self.label_13.setText(description_list[2])
         conn.commit()
         
 # ======================Start-Button========================
@@ -236,23 +238,23 @@ class MainWindow(QMainWindow):
 
         second_day = str(date_list[1])+"\n"+"Max: "+str(temp_max_list[1])+"°C"+"\n"+"Min: "+str(temp_min_list[1])+"°C"
         new_icon_2 = f"https://openweathermap.org/img/wn/{icon_list[1]}@2x.png"
-        self.label_11.setText(second_day)
+        self.label_14.setText(second_day)
         image = QImage()
         image.loadFromData(requests.get(new_icon_2).content)
-        self.image_label_3.setPixmap(QPixmap(image))
-        self.image_label_3.show()
+        self.image_label_4.setPixmap(QPixmap(image))
+        self.image_label_4.show()
         # self.image_label_3.setText(new_icon_2)
-        self.label_13.setText(description_list[1])
+        self.label_15.setText(description_list[1])
 
         third_day = str(date_list[2])+"\n"+"Max: "+str(temp_max_list[2])+"°C"+"\n"+"Min: "+str(temp_min_list[2])+"°C"
         new_icon_3 = f"https://openweathermap.org/img/wn/{icon_list[2]}@2x.png"
-        self.label_14.setText(third_day)
+        self.label_11.setText(third_day)
         image = QImage()
         image.loadFromData(requests.get(new_icon_3).content)
-        self.image_label_4.setPixmap(QPixmap(image))
-        self.image_label_4.show()
+        self.image_label_3.setPixmap(QPixmap(image))
+        self.image_label_3.show()
         # self.image_label_4.setText(new_icon_3)
-        self.label_15.setText(description_list[2])
+        self.label_13.setText(description_list[2])
 
     
 
@@ -276,3 +278,82 @@ class MainWindow(QMainWindow):
 
     def Quit(self):
         sys.exit()
+
+
+    def Amsterdam(self):
+        city_name = "Amsterdam"
+        country_code = "NL"
+        api_key = "bbdaa09e0842234cc242fc5186627b70"
+        url = f"http://api.openweathermap.org/data/2.5/forecast?q={city_name}&country_code={country_code}&mode=json&appid={api_key}"
+        response = requests.get(url).json()
+        
+        date_list = []
+        temp_max_list = []
+        temp_min_list = []
+        icon_list = []
+        description_list = []
+
+        for i in response['list'][:24:8]:
+            temp_max = math.floor(i['main']['temp_max']-273)
+            temp_max_list.append(temp_max)
+            # print(temp_max)
+            temp_min = math.floor(i['main']['temp_min']-273)
+            temp_min_list.append(temp_min)
+            # print(temp_min)
+            d = datetime.strptime(i['dt_txt'],"%Y-%m-%d %H:%M:%S")
+            date = f"{d.day}.{d.month}.{d.year}"
+            date_list.append(date)
+            # print(date_list)
+            icon = i['weather'][0]['icon']  
+            icon_list.append(icon)    
+            
+             
+            # print(icon_list)
+            description = i['weather'][0]['description']
+            description_list.append(description)
+            # print(description_list)
+
+    # =======================To write the datas to json file==========================
+
+            filename = 'weather.json'          #use the file extension .json
+            with open(filename, 'w+') as file_object:  #open the file in write mode
+                json.dump(response, file_object)
+
+                    
+ 
+        self.city.setText(city_name)
+
+        first_day = str(date_list[0])+"\n"+"Max: "+str(temp_max_list[0])+"°C"+"\n"+"Min: "+str(temp_min_list[0])+"°C"
+        new_icon = f"https://openweathermap.org/img/wn/{icon_list[0]}@2x.png"
+        self.label_10.setText(first_day)
+        image = QImage()
+        image.loadFromData(requests.get(new_icon).content)
+        self.image_label_2.setPixmap(QPixmap(image))
+        self.image_label_2.show()
+        # self.label_11.setText(icon_list[0])
+        self.label_12.setText(description_list[0])
+    
+
+        second_day = str(date_list[1])+"\n"+"Max: "+str(temp_max_list[1])+"°C"+"\n"+"Min: "+str(temp_min_list[1])+"°C"
+        new_icon_2 = f"https://openweathermap.org/img/wn/{icon_list[1]}@2x.png"
+        self.label_14.setText(second_day)
+        image = QImage()
+        image.loadFromData(requests.get(new_icon_2).content)
+        self.image_label_4.setPixmap(QPixmap(image))
+        self.image_label_4.show()
+        # self.image_label_3.setText(new_icon_2)
+        self.label_15.setText(description_list[1])
+
+        third_day = str(date_list[2])+"\n"+"Max: "+str(temp_max_list[2])+"°C"+"\n"+"Min: "+str(temp_min_list[2])+"°C"
+        new_icon_3 = f"https://openweathermap.org/img/wn/{icon_list[2]}@2x.png"
+        self.label_11.setText(third_day)
+        image = QImage()
+        image.loadFromData(requests.get(new_icon_3).content)
+        self.image_label_3.setPixmap(QPixmap(image))
+        self.image_label_3.show()
+        # self.image_label_4.setText(new_icon_3)
+        self.label_13.setText(description_list[2])
+
+
+    def about(self):
+        self.cams = about.About()
